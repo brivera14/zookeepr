@@ -1,7 +1,9 @@
 // Require npm package
 const express = require('express');
 // Require Animal data
-const { animals } = require('./data/animals.json')
+const { animals } = require('./data/animals.json');
+// Sets an enviroment variable
+const PORT = process.env.PORT || 3001;
 // Instantiate the server
 const app = express();
 
@@ -56,6 +58,6 @@ app.get('/api/animals', (req, res) => {
     res.json(results);
   });
 // Make server listen to request
-app.listen(3001, () => {
-    console.log(`API server now on port 3001!`);
+app.listen(PORT, () => {
+    console.log(`API server now on port ${PORT}!`);
 });
